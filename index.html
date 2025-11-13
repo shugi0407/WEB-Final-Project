@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventHub - Home</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #4a6fa5;
+      --secondary-color: #6b8cbc;
+      --accent-color: #ff6b6b;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--dark-color);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: var(--primary-color) !important;
+    }
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+    .hero {
+      background: linear-gradient(rgba(74, 111, 165, 0.9), rgba(74, 111, 165, 0.8)),
+        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .section-title {
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    /*  Featured Events Cards: Equal Height */
+    .event-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .event-card img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Features Section */
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      padding: 30px 0;
+      margin-top: 50px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">EventHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Welcome to EventHub</h1>
+      <p class="lead">Discover, register, and experience the best events around the world.</p>
+     
+    </div>
+  </section>
+
+  <!-- Featured Events Section (Equal Card Sizes) -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Featured Events</h2>
+      <div class="row g-4">
+        <!-- Event 1 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card">
+            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1350&q=80" alt="Tech Conference">
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Tech Conference 2023</h5>
+                <p class="card-text">Meet innovators and explore AI, IoT, and blockchain trends.</p>
+              </div>
+              <a href="registration.html?event=tech-conference" class="btn btn-primary mt-3">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1350&q=80" alt="Music Festival">
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Summer Music Festival</h5>
+                <p class="card-text">A weekend of music, good food, and unforgettable vibes.</p>
+              </div>
+              <a href="registration.html?event=music-festival" class="btn btn-primary mt-3">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card">
+            <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=1350&q=80" alt="Leadership Workshop">
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Leadership Workshop</h5>
+                <p class="card-text">Boost your communication and leadership skills with experts.</p>
+              </div>
+              <a href="registration.html?event=leadership-workshop" class="btn btn-primary mt-3">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section (Restored) -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Why Choose EventHub?</h2>
+      <div class="row text-center g-4">
+        <div class="col-md-4">
+          <div class="feature-icon">
+            <i class="bi bi-calendar-check"></i>
+          </div>
+          <h5>Easy Registration</h5>
+          <p>Register for any event quickly and securely with just a few clicks.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-icon">
+            <i class="bi bi-people"></i>
+          </div>
+          <h5>Wide Community</h5>
+          <p>Join a global community of passionate professionals and creators.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-icon">
+            <i class="bi bi-star"></i>
+          </div>
+          <h5>Trusted Platform</h5>
+          <p>Thousands of users trust EventHub to find, organize, and manage events.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>EventHub</h5>
+                    <p>Your one-stop platform for discovering and registering for amazing events.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Home</a></li>
+                        <li><a href="events.html" class="text-light">Events</a></li>
+                        <li><a href="about.html" class="text-light">About Us</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i> info@eventhub.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +7 (771) 113-5951</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Event Street, City, Country</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p>&copy; 2023 EventHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+</body>
+</html>

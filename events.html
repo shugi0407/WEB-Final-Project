@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventHub - Events</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #4a6fa5;
+      --secondary-color: #6b8cbc;
+      --accent-color: #ff6b6b;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--dark-color);
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: var(--primary-color) !important;
+    }
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+    .page-header {
+      background: linear-gradient(rgba(74, 111, 165, 0.9), rgba(74, 111, 165, 0.8)),
+        url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .event-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .event-card img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .event-category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--accent-color);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    footer {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      padding: 30px 0;
+      margin-top: 50px;
+    }
+
+   
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">EventHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="display-4 fw-bold">All Events</h1>
+      <p class="lead">Discover and register for exciting upcoming events</p>
+    </div>
+  </section>
+
+  <!-- Events Grid -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Event Card 1 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card position-relative">
+            <span class="event-category">Conference</span>
+            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1350&q=80" alt="Tech Conference">
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Tech Conference 2023</h5>
+                <p class="card-text">Join top industry leaders for a day of innovation, ideas, and networking.</p>
+                <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> New York | Oct 15, 2023</p>
+              </div>
+              <a href="registration.html?event=tech-conference" class="btn btn-primary mt-3">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card position-relative">
+            <span class="event-category">Music</span>
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1350&q=80" alt="Music Festival">
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Summer Music Festival</h5>
+                <p class="card-text">Three unforgettable days of live music, good food, and amazing people.</p>
+                <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Chicago | July 22–24, 2023</p>
+              </div>
+              <a href="registration.html?event=music-festival" class="btn btn-primary mt-3">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card position-relative">
+            <span class="event-category">Workshop</span>
+            <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=1350&q=80" alt="Leadership Workshop">
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Business Leadership Workshop</h5>
+                <p class="card-text">Sharpen your leadership and communication skills with professionals.</p>
+                <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Online | Sep 5, 2023</p>
+              </div>
+              <a href="registration.html?event=leadership-workshop" class="btn btn-primary mt-3">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 4 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card position-relative">
+            <span class="event-category">Sports</span>
+            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1350&q=80" alt="Marathon">
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">City Marathon 2023</h5>
+                <p class="card-text">Run with thousands of athletes in the biggest city marathon of the year.</p>
+                <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Los Angeles | Nov 12, 2023</p>
+              </div>
+              <a href="registration.html?event=marathon" class="btn btn-primary mt-3">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 5 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card position-relative">
+            <span class="event-category">Networking</span>
+            <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1350&q=80" alt="Networking Event">
+
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Tech Professionals Meetup</h5>
+                <p class="card-text">Connect with tech innovators, startups, and recruiters in a relaxed setting.</p>
+                <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> New York | Aug 18, 2023</p>
+              </div>
+              <a href="registration.html?event=networking" class="btn btn-primary mt-3">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 6 -->
+        <div class="col-lg-4 col-md-6 d-flex">
+          <div class="card event-card position-relative">
+            <span class="event-category">Workshop</span>
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1350&q=80" alt="Marketing Workshop">
+            <div class="card-body">
+              <div>
+                <h5 class="card-title">Digital Marketing Masterclass</h5>
+                <p class="card-text">Learn modern strategies from marketing experts and influencers.</p>
+                <p class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Online | Oct 30, 2023</p>
+              </div>
+              <a href="registration.html?event=marketing-workshop" class="btn btn-primary mt-3">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>EventHub</h5>
+                    <p>Your one-stop platform for discovering and registering for amazing events.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Home</a></li>
+                        <li><a href="events.html" class="text-light">Events</a></li>
+                        <li><a href="about.html" class="text-light">About Us</a></li>
+                        <li><a href="contact.html" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i> info@eventhub.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +7 (771) 113-5951</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Event Street, City, Country</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p>&copy; 2023 EventHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- JS -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
